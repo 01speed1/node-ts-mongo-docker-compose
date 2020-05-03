@@ -1,0 +1,17 @@
+version: "3.2"
+services:
+  api:
+    env_file: .env
+    build: .
+    working_dir: /api
+    volumes:
+      - "./:/api"
+    command: "bash -c 'npm run start-dev'"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

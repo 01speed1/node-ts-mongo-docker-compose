@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "docs": "./node_modules/.bin/typedoc --out docs --mode modules src",
+    "start-dev": "nodemon --config \"./util/nodemon.json\"/",
+    "build": "rm -rf ./dist/ && node_modules/typescript/bin/tsc",
+    "start": "node dist/start.js",
+    "test": "./node_modules/.bin/mocha -r ts-node/register src/**/*.spec.ts",
+    "lint": "tslint --fix -c tslint.json 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Oscar H. Guzmán",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.4",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  }
+}
